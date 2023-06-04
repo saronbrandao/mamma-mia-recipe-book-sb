@@ -190,6 +190,12 @@
       & .recipe__details {
         flex-direction: column;
         gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        .recipe__info {
+          margin: 0;
+        }
 
         .recipe__user-generated {
           height: 0;
