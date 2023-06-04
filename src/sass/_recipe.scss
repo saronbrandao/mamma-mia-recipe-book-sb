@@ -2,12 +2,10 @@
   background-color: $color-grey-light-1;
   display: none;
 
-  ///////////
   // FIGURE
   &__fig {
     height: 32rem;
     position: relative;
-    // transform: scale(1.04) translateY(-1px);
     transform-origin: top;
 
     &::before {
@@ -63,7 +61,6 @@
     }
   }
 
-  ///////////
   // DETAILS
   &__details {
     display: flex;
@@ -120,7 +117,6 @@
     }
   }
 
-  ///////////
   // INGREDIENTS
   &__ingredients {
     padding: 5rem 8rem;
@@ -157,7 +153,6 @@
     flex: 0 0 auto;
   }
 
-  ///////////
   // DIRECTIONS
   &__directions {
     padding: 5rem 10rem;

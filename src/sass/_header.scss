@@ -99,7 +99,6 @@
     cursor: pointer;
     padding: 0 1.5rem;
     transition: all 0.3s;
-
     display: flex;
     align-items: center;
 
@@ -142,7 +141,6 @@
 .bookmarks {
   padding: 1rem 0;
   position: absolute;
-  // right: 0;
   right: -2.5rem;
   z-index: 10;
   width: 40rem;
@@ -160,7 +158,6 @@
   &__field {
     cursor: pointer;
     padding: 0 4rem;
-
     display: flex;
     align-items: center;
     height: 100%;

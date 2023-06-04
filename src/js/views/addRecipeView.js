@@ -1,5 +1,4 @@
 import View from './view';
-import icons from '../../img/icons.svg';
 
 class addRecipeView extends View {
   _parentElement = document.querySelector('.upload');
@@ -14,7 +13,6 @@ class addRecipeView extends View {
     super();
     this._addHandlerShowWindow();
     this._addHandlerHideWindow();
-    //this.addHandlerUpload();
   }
 
   toggleWindow() {
@@ -23,9 +21,6 @@ class addRecipeView extends View {
     if (this._window.classList.contains('hidden')) {
       this._parentElement.innerHTML = this._generateMarkup();
     }
-    // if (this._window.classList.contains('hidden')) {
-    //   this._parentElement.innerHTML = this._generateMarkup();
-    // }
   }
 
   _addHandlerShowWindow() {
@@ -41,7 +36,6 @@ class addRecipeView extends View {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
-      // console.log(dataArr);
       const data = Object.fromEntries(dataArr);
       handler(data);
     });
@@ -89,5 +83,3 @@ class addRecipeView extends View {
 }
 
 export default new addRecipeView();
-
-//BUCETAO

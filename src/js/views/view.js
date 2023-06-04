@@ -27,24 +27,16 @@ export default class View {
   }
 
   update(data) {
-    //this check bellow had to be removed because made no sense anymore
-    // if (!data || (Array.isArray(data) && data.length === 0))
-    //   return this.renderError();
-
     this._data = data;
 
     const newMarkup = this._generateMarkup();
 
     const newDOM = document.createRange().createContextualFragment(newMarkup);
-    //console.log(Array.from(newDOM.querySelectorAll('*')));
-    // here we convert to an array because it originally returns a nodelist, but we need an array so we can use the array method 'forEach'
+    // here I convert to an array because it originally returns a nodelist, but I need an array so we can use 'forEach'
     const newElements = Array.from(newDOM.querySelectorAll('*'));
     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
-    //console.log(curElements);
-    //console.log(newElements);
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
-      // console.log(curEl.firstChild?.nodeValue);
       //updates changed text
       if (
         !newEl.isEqualNode(curEl) &&

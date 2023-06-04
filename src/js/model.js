@@ -55,11 +55,9 @@ export const loadRecipe = async function (id) {
     //same name, but it is a totally new variable.
     const data = await AJAX(`${API_URL}${id}?key=${API_KEY}`);
     state.recipe = createRecipeObject(data);
-    // console.log(state.recipe);
     if (state.bookmarks.some((bookmark) => bookmark.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
-    // console.log(recipe);
   } catch (err) {
     console.error(err);
     throw err;
@@ -106,7 +104,6 @@ export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach((ing) => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
     // new quantity = old quantity * newServings / oldServings
-    // ex: 2 * 8 / 4 = 4
   });
 
   state.recipe.servings = newServings;
@@ -119,7 +116,6 @@ const persistBookmarks = function () {
 export const addBookmark = function (recipe) {
   // add bookmark
   state.bookmarks.push(recipe);
-  // console.log(state.bookmarks);
 
   // mark current recipe as bookmark
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
@@ -135,10 +131,6 @@ export const deleteBookmark = function (id) {
   if (id === state.recipe.id) state.recipe.bookmarked = false;
   persistBookmarks();
 };
-//made by me
-// export const resetPage = function () {
-//   state.search.page = 1;
-// };
 
 const init = function () {
   const storage = localStorage.getItem('bookmarks');
@@ -146,11 +138,10 @@ const init = function () {
 };
 
 init();
-// console.log(state.bookmarks);
 //this method bellow is for development only:
-const clearBookmarks = function () {
-  localStorage.clear('bookmarks');
-};
+// const clearBookmarks = function () {
+//   localStorage.clear('bookmarks');
+// };
 //clearBookmarks();
 
 export const uploadRecipe = async function (newRecipe) {
@@ -159,9 +150,7 @@ export const uploadRecipe = async function (newRecipe) {
       .filter((entry) => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map((ing) => {
         const ingArr = ing[1].split(',').map((el) => el.trim());
-        // const ingArr = ing[1].split(',').map(el => el.trim());
-        // const ingArr = ing[1].replaceAll(' ', '').split(',');
-        //console.log(ingArr);
+       
         if (ingArr.length !== 3)
           throw new Error(
             'Wrong ingrediente format! Please use the correct format :)'
@@ -178,22 +167,10 @@ export const uploadRecipe = async function (newRecipe) {
       servings: newRecipe.servings,
       ingredients,
     };
-    //console.log(API_KEY);
     const data = await AJAX(`${API_URL}?key=${API_KEY}`, recipe);
-    console.log(data);
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
-    //xoxotao
   } catch (err) {
     throw err;
   }
 };
-
-// const data = await sendJSON(
-//   `${API_URL}?search=${recipe.title}&?key=${KEY}`,
-//   recipe
-// );
-
-// invalid input data. Path `cooking_time` is required.. Path `servings` is required.. Path `image_url` is required.. Path `source_url` is required.. Path `publisher` is required.. Path `title` is required. (400)
-
-//10f4afde-6c70-413d-8a9c-a6d1b3b22068
