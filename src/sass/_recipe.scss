@@ -180,5 +180,24 @@
 
   &.--visible {
     display: block;
+    width: 100%;
+
+    @media (max-width: 900px) {
+      width: 100vw;
+    }
+
+    @media (max-width: 600px) {
+      & .recipe__details {
+        flex-direction: column;
+        gap: 10px;
+
+        .recipe__user-generated {
+          height: 0;
+        }
+      }
+      .recipe__ingredient-list {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 }

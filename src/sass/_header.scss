@@ -117,6 +117,9 @@
 
     &:hover {
       background-color: $color-grey-light-2;
+      @media (max-width: 900px) {
+        background-color: transparent;
+      }
     }
 
     @media (max-width: 600px) {
@@ -127,6 +130,12 @@
   }
   @media (max-width: 600px) {
     margin-right: 0;
+
+    .nav__item {
+      .nav__icon {
+        margin-right: 30px;
+      }
+    }
   }
 }
 
@@ -166,5 +175,9 @@
   .nav__btn--bookmarks:hover + & {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    padding-inline: 20px;
   }
 }
