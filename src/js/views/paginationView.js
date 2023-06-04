@@ -59,7 +59,6 @@ class PaginationView extends View {
       return nextMarkupButton;
     }
     if (n === 'f' && p === 't') {
-      console.log(prevMarkupButton);
       return prevMarkupButton;
     }
     if (n === 't' || p === 't') {

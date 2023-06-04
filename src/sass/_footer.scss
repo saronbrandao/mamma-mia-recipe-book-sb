@@ -1,0 +1,20 @@
+footer {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  height: 50px;
+
+  p {
+    color: $color-primary;
+    margin-left: 30px;
+    font-size: 1.2rem;
+  }
+
+  a,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: $color-primary;
+    text-decoration: underline;
+  }
+}
