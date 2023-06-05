@@ -29,6 +29,7 @@ const linksLoader = () => {
       meal.addEventListener('click', () => {
         recipe.classList.add('--visible');
         searchResults.classList.remove('--visible');
+        window.scrollTo(0, 0);
       })
     );
   }, 500);
