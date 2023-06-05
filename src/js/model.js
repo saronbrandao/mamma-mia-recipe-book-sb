@@ -97,6 +97,8 @@ export const getSearchResultsPage = function (page = state.search.page) {
   const start = (page - 1) * state.search.resultsPerPage; //0
   const end = page * state.search.resultsPerPage; //9
 
+  linksLoader();
+
   return state.search.results.slice(start, end);
 };
 
@@ -150,7 +152,7 @@ export const uploadRecipe = async function (newRecipe) {
       .filter((entry) => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map((ing) => {
         const ingArr = ing[1].split(',').map((el) => el.trim());
-       
+
         if (ingArr.length !== 3)
           throw new Error(
             'Wrong ingrediente format! Please use the correct format :)'
