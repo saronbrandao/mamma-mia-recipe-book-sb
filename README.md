@@ -12,25 +12,6 @@ Check out the live demo: [Mamma Mia Recipe Book](https://mamma-mia-recipe-book.n
 - LocalStorage: Mamma Mia utilizes the browser's localStorage to securely store your bookmarked recipes locally. This means your favorite recipes are always just a click away, even if you switch devices.
 - Model-View-Controller (MVC): The app is built following the popular Model-View-Controller design pattern, ensuring a clear separation of concerns, maintainability, and extensibility.
 
-## Screenshots (if available)
-Add screenshots or GIFs showcasing the app's user interface and functionality. For example:
-
-![Screenshot 1](link-to-screenshot-1)
-![Screenshot 2](link-to-screenshot-2)
-
-## Installation
-1. Clone the repository:
-    ```
-    git clone https://github.com/your-username/mamma-mia.git
-    ```
-2. Open the project folder:
-    ```
-    cd mamma-mia
-    ```
-3. Launch the application:
-   - If you have a live server extension installed in your code editor, open `index.html` with the live server.
-   - Otherwise, simply open `index.html` in your preferred browser.
-
 ## Technologies Used
 - HTML
 - CSS (Sass)
@@ -45,10 +26,9 @@ Contributions are always welcome! If you'd like to contribute to Mamma Mia Recip
 5. Submit a pull request outlining the changes you've made.
 
 ## Credits
-- The Mamma Mia Recipe Book was created by [Your Name].
+- The Mamma Mia Recipe Book was created by Saron Brandao.
 - Recipe data and search functionality provided by Forkify API.
 
 ## License
 The Mamma Mia Recipe Book is released under the MIT License.
-
 Feel free to customize the README file further to suit your specific needs. Good luck with your app, and happy cooking!
